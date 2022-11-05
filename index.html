@@ -1,0 +1,87 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+
+
+<style>
+    th{
+        color:#fff;
+            }
+    tr {
+      color: #fff;
+    }
+
+    a {
+      color #fff;
+    }
+            @keyframes color {
+              30% {background: #ececec;}
+              40% {background: #e3c8c8;}
+              20% {background: #edd1d1;}
+            }
+
+            body{
+              background: #000000;
+              animation: color 9s infinite linear;
+              text-align: center;
+              padding: 1.5em;
+            }
+            h1 {
+              font-size: 50px;
+              font-weight: 600;
+              color: transparent;
+              background-clip: text;
+              background-image: radial-gradient(circle, #d7c220, #ee4b2b);
+              -webkit-background-clip: text;
+              text-align: center;
+              background-color: burlywood;
+              ;
+            }
+
+</style>
+
+<body>
+  <h1>Mega Revision B.M Solutions</h1>
+  <br><br>
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Lecture</th>
+        <th>Link 1 (Question Paper)</th>
+        <th>Link 2 (Solutions)</th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+	    {'Lecture':'Question Paper', 'Link_1':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing', 'Link_2':'https://programmingrakesh.github.io/pythontutorialtamil/'},
+	]
+
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].Lecture}</td>
+							<td><a href="${data[i].Link_1}" style="display:block;">${data[i].Link_1}</a></td>
+							<td><a href="${data[i].Link_2}" style="display:block;">${data[i].Link_2}</a></td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
